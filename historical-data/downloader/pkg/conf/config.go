@@ -1,15 +1,15 @@
 package conf
 
 import (
-	"../persist"
 	"fmt"
+	"github.com/pink-lucifer/securities-analysis/historical-data/downloader/pkg/persist"
 	"github.com/spf13/viper"
 	"time"
 )
 
 func Init() {
 	viper.SetConfigType("yaml")
-	viper.SetConfigName("application")       // name of config file (without extension)
+	viper.SetConfigName("config")            // name of config file (without extension)
 	viper.AddConfigPath("/etc/downloader/")  // path to look for the config file in
 	viper.AddConfigPath("$HOME/.downloader") // call multiple times to add many search paths
 	viper.AddConfigPath(".")                 // optionally look for config in the working directory

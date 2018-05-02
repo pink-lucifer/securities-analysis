@@ -1,8 +1,8 @@
 package quotedata
 
 import (
-	"../model"
-	"../util"
+	"github.com/pink-lucifer/securities-analysis/historical-data/downloader/pkg/model"
+	"github.com/pink-lucifer/securities-analysis/historical-data/downloader/pkg/util"
 	"time"
 )
 

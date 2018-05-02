@@ -1,7 +1,7 @@
 package parser
 
 import (
-	"../model"
+	"github.com/pink-lucifer/securities-analysis/historical-data/downloader/pkg/model"
 	"strings"
 )
 
