@@ -35,7 +35,7 @@ func TestParseNasdaqSymbol(t *testing.T) {
 	<-completed
 }
 
-func ProcessNasdaqSymbol(listed <-chan *model.ListedSymbol, eofCh <-chan int, done chan<-bool)  {
+func ProcessNasdaqSymbol(listed <-chan *model.ListedSymbol, eofCh <-chan int, done chan<- bool) {
 	var total, processed int
 	for {
 		select {

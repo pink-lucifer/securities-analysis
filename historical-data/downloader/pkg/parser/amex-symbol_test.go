@@ -34,7 +34,7 @@ func TestParseAmexSymbol(t *testing.T) {
 	<-completed
 }
 
-func ProcessAmexSymbol(listed <-chan *model.ListedSymbol, eofCh <-chan int, done chan<-bool)  {
+func ProcessAmexSymbol(listed <-chan *model.ListedSymbol, eofCh <-chan int, done chan<- bool) {
 	var total, processed int
 	for {
 		select {

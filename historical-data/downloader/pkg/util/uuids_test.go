@@ -4,7 +4,7 @@ import "testing"
 
 func TestGenerateUUIDV4(t *testing.T) {
 	uid, err := GenerateUUIDV4()
-	if err != nil{
+	if err != nil {
 		t.Fatal(err)
 	}
 

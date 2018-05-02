@@ -34,8 +34,7 @@ func TestParseNyseSymbol(t *testing.T) {
 	<-completed
 }
 
-
-func ProcessNyseSymbol(listed <-chan *model.ListedSymbol, eofCh <-chan int, done chan<-bool)  {
+func ProcessNyseSymbol(listed <-chan *model.ListedSymbol, eofCh <-chan int, done chan<- bool) {
 	var total, processed int
 	for {
 		select {

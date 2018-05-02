@@ -14,3 +14,8 @@
 # Jetbrains
 .idea/
 *.iml
+
+# directories
+data/listed-mkt/amex/historical/
+data/listed-mkt/nyse/historical/
+data/listed-mkt/nasdaq/historical/

@@ -12,7 +12,7 @@ func ParseNasdaqSymbol(ch <-chan []string, eofCh <-chan int, listed chan<- *mode
 	for {
 		select {
 		case line := <-ch:
-			if len(line)!=0 {
+			if len(line) != 0 {
 				listed <- &model.ListedSymbol{
 					Symbol:       strings.TrimSpace(line[0]),
 					Name:         strings.TrimSpace(line[1]),

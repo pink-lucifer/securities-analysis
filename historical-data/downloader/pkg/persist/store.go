@@ -4,7 +4,7 @@ import "github.com/jmoiron/sqlx"
 
 const TBL_INSERT_LISTED_SYMBOL = "insert into listed_symbol(uuid, listed_market, symbol, name, ipo_year, sector, industry, summary_quote_url) values (?,?,?,?,?,?,?,?)"
 
-func Insert(tx *sqlx.Tx, symbol *TblListedSymbol) (int64, int64, error)  {
+func Insert(tx *sqlx.Tx, symbol *TblListedSymbol) (int64, int64, error) {
 	r, err := tx.Exec(TBL_INSERT_LISTED_SYMBOL, symbol.Uuid, symbol.Listed_market, symbol.Symbol, symbol.Name, symbol.IpoYear, symbol.Sector, symbol.Industry, symbol.SummaryQuote)
 	if err != nil {
 		return 0, 0, err
@@ -19,4 +19,3 @@ func Insert(tx *sqlx.Tx, symbol *TblListedSymbol) (int64, int64, error)  {
 	}
 	return id, ra, nil
 }
-

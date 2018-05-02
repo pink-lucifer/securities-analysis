@@ -32,7 +32,7 @@ func ProcessCSV(rc io.Reader, ch chan<- []string, eof chan<- int) {
 			log.Fatal(err)
 
 		}
-		if len(rec) == 0{
+		if len(rec) == 0 {
 			continue
 		}
 		ch <- rec

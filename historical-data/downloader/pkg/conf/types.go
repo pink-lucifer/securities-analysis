@@ -5,5 +5,5 @@ import (
 )
 
 type Config struct {
-	DataSourceConfig  *persist.DataSourceConfig
+	DataSourceConfig *persist.DataSourceConfig
 }
