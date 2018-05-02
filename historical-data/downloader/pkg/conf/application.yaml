@@ -1,0 +1,8 @@
+datasource:
+  type: mysql
+  url: lufs:lufs8888@tcp(127.0.0.1:3306)/lufs?parseTime=true
+  username:
+  password:
+  max-idle: 1
+  max-open: 20
+  max-life-time:
