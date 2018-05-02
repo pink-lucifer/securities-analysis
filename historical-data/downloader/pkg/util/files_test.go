@@ -41,3 +41,11 @@ func TestWriteFile(t *testing.T) {
 		t.Fatal(err)
 	}
 }
+
+func TestEnsureDirExist(t *testing.T) {
+	path := "../../data/listed-mkt/nasdaq/historical/"
+	err := EnsureDirExist(path)
+	if err != nil {
+		t.Fatal(err)
+	}
+}

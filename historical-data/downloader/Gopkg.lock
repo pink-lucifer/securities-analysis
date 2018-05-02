@@ -14,6 +14,12 @@
   version = "v1.4.7"
 
 [[projects]]
+  name = "github.com/go-sql-driver/mysql"
+  packages = ["."]
+  revision = "a0583e0143b1624142adab07e0e97fe106d99561"
+  version = "v1.3"
+
+[[projects]]
   branch = "master"
   name = "github.com/hashicorp/hcl"
   packages = [
@@ -35,6 +41,15 @@
   packages = ["."]
   revision = "76626ae9c91c4f2a10f34cad8ce83ea42c93bb75"
   version = "v1.0"
+
+[[projects]]
+  branch = "master"
+  name = "github.com/jmoiron/sqlx"
+  packages = [
+    ".",
+    "reflectx"
+  ]
+  revision = "2aeb6a910c2b94f2d5eb53d9895d80e27264ec41"
 
 [[projects]]
   name = "github.com/magiconair/properties"
@@ -127,6 +142,6 @@
 [solve-meta]
   analyzer-name = "dep"
   analyzer-version = 1
-  inputs-digest = "67ec5a8267bc4ec18ee4a992cfe73c49ff62088091164a98888015cad27b4fc0"
+  inputs-digest = "90b19347926b8b1386e271d9b02194815df873a14509d4e025b55a803a105b54"
   solver-name = "gps-cdcl"
   solver-version = 1

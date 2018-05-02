@@ -4,6 +4,7 @@ import (
 	"io/ioutil"
 	"log"
 	"net/http"
+	"os"
 )
 
 func HttpDownload(uri string) ([]byte, error) {
@@ -44,5 +45,15 @@ func DownloadToFile(uri string, dst string) error {
 	}
 	log.Printf("saved %s as %s\n", uri, dst)
 
+	return nil
+}
+
+func EnsureDirExist(path string) error {
+	if _, err := os.Stat(path); os.IsNotExist(err) {
+		err = os.Mkdir(path, os.ModePerm)
+		if err != nil {
+			return err
+		}
+	}
 	return nil
 }

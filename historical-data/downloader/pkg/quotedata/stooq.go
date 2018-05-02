@@ -30,8 +30,12 @@ func HistoricalQuoteInitialDownload(mkt model.Market, symbol string, now time.Ti
 		dir = nasdaqDir
 		break
 	}
+	err := util.EnsureDirExist(dir)
+	if err != nil {
+		return err
+	}
 	nowStr := now.Format("2006-01-02-15-04-05")
 	fileName := dir + symbol + midfix + "." + nowStr + fileTypeSuffix
-	err := util.DownloadToFile(url, fileName)
+	err = util.DownloadToFile(url, fileName)
 	return err
 }

@@ -14,10 +14,12 @@ create table listed_symbol(
   `sector` varchar(32) null comment 'sector of security',
   `industry` varchar(32) null comment 'industry of security',
   `summary_quote_url` varchar(256) null comment 'url for summary quote',
-  `created_datetime` timestamp DEFAULT CURRENT_TIMESTAMP,
-  `last_updated_update` TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+  `created_timestamp` timestamp DEFAULT CURRENT_TIMESTAMP,
+  `last_updated_timestamp` TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
 );
 create unique index listed_symbol_uuid on listed_symbol(uuid) ;
 create unique index listed_symbol_mkt_symbol on listed_symbol(listed_market, symbol);
 
-insert into listed_symbol(uuid, listed_market, symbol, name, ipo_year, sector, industry, summary_quote_url) values (?,?,?,?,?,?,?,?);
+insert into listed_symbol(uuid, listed_market, symbol, name, ipo_year, sector, industry, summary_quote_url)
+ values ('2b514f90-9fb4-41e5-8c0b-e56718a6cd05',9999,'TEST','TEST NAME',1985,'TEST SECTOR','TEST INDUSTRY','TEST SUMMARY QUOTE URL');
+commit;
