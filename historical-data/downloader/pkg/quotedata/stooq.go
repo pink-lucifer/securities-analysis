@@ -3,6 +3,8 @@ package quotedata
 import (
 	"github.com/pink-lucifer/securities-analysis/historical-data/downloader/pkg/model"
 	"github.com/pink-lucifer/securities-analysis/historical-data/downloader/pkg/util"
+	"github.com/spf13/viper"
+	"strings"
 	"time"
 )
 
@@ -21,13 +23,22 @@ func HistoricalQuoteInitialDownload(mkt model.Market, symbol string, now time.Ti
 	var dir string
 	switch mkt {
 	case model.NYSE:
-		dir = nyseDir
+		dir = viper.GetString("nyse.dir")
+		if dir == "" || strings.TrimSpace(dir) == "" {
+			dir = nyseDir
+		}
 		break
 	case model.AMEX:
-		dir = amexDir
+		dir = viper.GetString("amex.dir")
+		if dir == "" || strings.TrimSpace(dir) == "" {
+			dir = amexDir
+		}
 		break
 	case model.NASDAQ:
-		dir = nasdaqDir
+		dir = viper.GetString("nasdaq.dir")
+		if dir == "" || strings.TrimSpace(dir) == "" {
+			dir = nasdaqDir
+		}
 		break
 	}
 	err := util.EnsureDirExist(dir)
@@ -35,7 +46,11 @@ func HistoricalQuoteInitialDownload(mkt model.Market, symbol string, now time.Ti
 		return err
 	}
 	nowStr := now.Format("2006-01-02-15-04-05")
-	fileName := dir + symbol + midfix + "." + nowStr + fileTypeSuffix
+	fileName := viper.GetString("filename")
+	if fileName == "" || strings.TrimSpace(fileName) == "" {
+		fileName = dir + symbol + midfix + "." + nowStr + fileTypeSuffix
+	}
+
 	err = util.DownloadToFile(url, fileName)
 	return err
 }

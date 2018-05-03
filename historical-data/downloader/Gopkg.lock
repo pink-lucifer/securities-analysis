@@ -10,8 +10,8 @@
 [[projects]]
   name = "github.com/fsnotify/fsnotify"
   packages = ["."]
-  revision = "c2828203cd70a50dcccfb2761f8b1f8ceef9a8e9"
-  version = "v1.4.7"
+  revision = "836bfd95fecc0f1511dd66bdbf2b5b61ab8b00b6"
+  version = "v1.2.11"
 
 [[projects]]
   name = "github.com/go-sql-driver/mysql"
@@ -115,10 +115,10 @@
   version = "v1.0.2"
 
 [[projects]]
-  branch = "master"
-  name = "golang.org/x/sys"
-  packages = ["unix"]
-  revision = "78d5f264b493f125018180c204871ecf58a2dce1"
+  name = "go.uber.org/atomic"
+  packages = ["."]
+  revision = "1ea20fb1cbb1cc08cbd0d913a96dead89aa18289"
+  version = "v1.3.2"
 
 [[projects]]
   name = "golang.org/x/text"
@@ -142,6 +142,6 @@
 [solve-meta]
   analyzer-name = "dep"
   analyzer-version = 1
-  inputs-digest = "90b19347926b8b1386e271d9b02194815df873a14509d4e025b55a803a105b54"
+  inputs-digest = "0b6e5e28000744370b6ada343fcae82d7c3eaa1d9abdf747d271684d0d390b1c"
   solver-name = "gps-cdcl"
   solver-version = 1

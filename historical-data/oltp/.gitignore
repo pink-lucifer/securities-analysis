@@ -4,7 +4,6 @@
 *.dll
 *.so
 *.dylib
-downloader
 
 # Test binary, build with `go test -c`
 *.test
@@ -17,6 +16,3 @@ downloader
 *.iml
 
 # directories
-data/listed-mkt/amex/historical/
-data/listed-mkt/nyse/historical/
-data/listed-mkt/nasdaq/historical/
