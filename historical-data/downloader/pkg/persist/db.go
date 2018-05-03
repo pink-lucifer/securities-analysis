@@ -33,7 +33,7 @@ func GetDb() *sqlx.DB {
 }
 
 /*
-	As a quick ref to application.yaml
+	As a quick ref to config.yaml
 */
 func NewDb(cfg *DataSourceConfig) *sqlx.DB {
 	db := sqlx.MustOpen(cfg.DsType, cfg.Url)

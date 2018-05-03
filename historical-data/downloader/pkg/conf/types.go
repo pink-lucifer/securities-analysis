@@ -1,7 +1,7 @@
 package conf
 
 import (
-	"../persist"
+	"github.com/pink-lucifer/securities-analysis/historical-data/downloader/pkg/persist"
 )
 
 type Config struct {
