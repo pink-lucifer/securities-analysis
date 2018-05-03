@@ -4,6 +4,7 @@
 *.dll
 *.so
 *.dylib
+oltp
 
 # Test binary, build with `go test -c`
 *.test
