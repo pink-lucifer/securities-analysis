@@ -21,5 +21,5 @@ func TestRunNasdaqSymbolParse(t *testing.T) {
 	InitNasdaq(cfg)
 
 	defer sqlDb.Close()
-	RunNyseSymbolParse()
+	RunNasdaqSymbolParse()
 }

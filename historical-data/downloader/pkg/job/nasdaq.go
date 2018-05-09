@@ -20,7 +20,7 @@ func InitNasdaq(config *conf.Config) {
 	amexfile = viper.GetString("nasdaq.symfile")
 }
 
-func RumNasdaqSymbolParse() {
+func RunNasdaqSymbolParse() {
 	ch := make(chan []string)
 	defer close(ch)
 	eof := make(chan int, 1)
@@ -44,6 +44,6 @@ func RumNasdaqSymbolParse() {
 	log.Print("Start parsing csv file record!")
 	go parser.ParseAndWrapNasdaqSymbol(ch, eof, listed, done)
 
-	go persistListedSymbol(sqlDb, listed, done, completed)
+	go pooledPersistListedSymbol(sqlDb, listed, done, completed)
 	<-completed
 }

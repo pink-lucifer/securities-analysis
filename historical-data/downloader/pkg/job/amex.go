@@ -17,7 +17,7 @@ func init() {
 
 func InitAmex(config *conf.Config) {
 	initDB(config)
-	amexfile = viper.GetString("nasdaq.symfile")
+	amexfile = viper.GetString("amex.symfile")
 	//if amexfile == "" || strings.TrimSpace(amexfile) == ""{
 	//	amexfile = parser.AmexCsvFile
 	//}
@@ -47,6 +47,6 @@ func RunAmexSymbolParse() {
 	log.Print("Start parsing csv file record!")
 	go parser.ParseAndWrapAmexSymbol(ch, eof, listed, done)
 
-	go persistListedSymbol(sqlDb, listed, done, completed)
+	go pooledPersistListedSymbol(sqlDb, listed, done, completed)
 	<-completed
 }
