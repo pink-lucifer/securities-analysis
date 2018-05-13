@@ -1,5 +1,0 @@
-package oltp
-
-func main()  {
-	
-}
